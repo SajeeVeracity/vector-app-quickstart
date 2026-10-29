@@ -2,7 +2,7 @@ import type { IncomingMessage, ServerResponse } from 'node:http';
 import { DEV_APP_ID, type AppManifest } from '@vectoragents/vs-apps';
 import { createDevIssuer, devTokenRequestSchema, readJsonBody } from '@vectoragents/vs-apps/server';
 
-// Defined only in harness mode: createDevIssuer writes a key file to the OS temp directory on each call.
+// Defined only in harness mode: createDevIssuer reads or creates a key file in the OS temp directory that every process on the machine shares.
 export const devIssuer = process.env.VA_DEV_ISSUER === 'true' ? createDevIssuer() : undefined;
 
 export const DEV_JWKS_PATH = '/api/__dev/jwks.json';
