@@ -13,9 +13,9 @@ const spaceEnv = {
 test('harness mode turns the dev issuer on and sets every value itself', () => {
   const env = presetEnv('harness', {});
   assert.equal(env.VA_DEV_ISSUER, 'true');
-  assert.equal(env.SERVER_PORT, '3001');
+  assert.equal(env.SERVER_PORT, '3101');
   assert.equal(env.CLIENT_PORT, '5173');
-  assert.equal(env.PUBLIC_BASE_URL, 'http://localhost:3001');
+  assert.equal(env.PUBLIC_BASE_URL, 'http://localhost:3101');
 });
 
 test('harness mode pins the parent origin to the harness origin', () => {
@@ -26,7 +26,7 @@ test('harness mode pins the parent origin to the harness origin', () => {
 test('harness mode ignores Space values from the shell', () => {
   const env = presetEnv('harness', spaceEnv);
   assert.equal(env.ALLOWED_PARENT_ORIGIN, 'http://localhost:5173');
-  assert.equal(env.SERVER_PORT, '3001');
+  assert.equal(env.SERVER_PORT, '3101');
   assert.equal(env.SPACE_JWKS_URL, undefined);
 });
 
