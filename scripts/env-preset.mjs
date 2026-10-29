@@ -1,7 +1,9 @@
+const SERVER_PORT = '3101';
+
 const HARNESS = {
-  SERVER_PORT: '3101',
+  SERVER_PORT,
   CLIENT_PORT: '5173',
-  PUBLIC_BASE_URL: 'http://localhost:3101',
+  PUBLIC_BASE_URL: `http://localhost:${SERVER_PORT}`,
   // The harness page is the iframe's parent, so its origin is the client origin.
   ALLOWED_PARENT_ORIGIN: 'http://localhost:5173',
   VA_DEV_ISSUER: 'true',
